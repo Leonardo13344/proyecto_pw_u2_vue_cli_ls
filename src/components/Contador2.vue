@@ -23,7 +23,19 @@
 
 export default {
     name: "Contador123",
-    props:['titulo', 'inicio'],
+    props:{
+        titulo: String,
+        inicio: {
+            type: Number,
+            required: false,
+            default: 100,
+            validator(value){
+                //Que retorne True o False
+                return value > 0 
+            }
+        }
+
+    },
 
     data() {
         return {
