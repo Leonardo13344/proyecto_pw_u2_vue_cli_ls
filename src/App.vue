@@ -1,10 +1,11 @@
 <template>
-  <Pregunta />
+  <tarea-13 />
 </template>
 
 <script>
 
 import Pregunta from './components/Pregunta.vue'
+import Tarea13 from './components/tarea13.vue'
 export default {
   name: 'App',
   data(){
@@ -13,7 +14,8 @@ export default {
     }
   },
   components: {
-    Pregunta,  
+    Pregunta,
+    Tarea13,  
   }
 }
 </script>
