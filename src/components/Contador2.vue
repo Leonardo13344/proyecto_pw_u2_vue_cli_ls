@@ -1,6 +1,6 @@
 <template>
     <!-- Html-->
-    <h2>Contador!</h2>
+    <h2>{{titulo || 'Titulo Vacio'}}</h2>
     <p>{{ numero }} <sup>2</sup> = {{ obtenerCuadradoComputado }}</p>
     <p>{{ numero }} <sup>2</sup> = {{ obtenerCuadradoComputado }}</p>
     <p>{{ numero }} <sup>2</sup> = {{ obtenerCuadradoComputado }}</p>
@@ -23,9 +23,23 @@
 
 export default {
     name: "Contador123",
+    props:{
+        titulo: String,
+        inicio: {
+            type: Number,
+            required: false,
+            default: 100,
+            validator(value){
+                //Que retorne True o False
+                return value > 0 
+            }
+        }
+
+    },
+
     data() {
         return {
-            numero: 5
+            numero: this.inicio,
         }
     },
     methods: {
@@ -34,7 +48,7 @@ export default {
             return this.numero * this.numero
         },
         incrementar(){
-            return this.numero++
+            return this.numero = this.numero + 1
         },
         decrementar(){
             return this.numero--
@@ -44,6 +58,9 @@ export default {
         obtenerCuadradoComputado(){
             console.log("Entrando a la computado")
             return this.numero * this.numero
+        },
+        muestraTitulo(){
+            return this.titulo || "Titulo vacio 2"
         }
     }
 }

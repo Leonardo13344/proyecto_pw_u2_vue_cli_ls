@@ -1,17 +1,18 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
+  
   <!--<HelloWorld msg="Bienvenido to Your Vue.js App"/>-->
-  <Contador />
+  <tarea14 />
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 import Contador from './components/Contador.vue'
+import tarea14 from './components/tarea14.vue'
 
 export default {
   name: 'App',
   components: {
-    Contador 
+    tarea14
   }
 }
 </script>
@@ -24,5 +25,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+body{
+  background: black;
 }
 </style>
